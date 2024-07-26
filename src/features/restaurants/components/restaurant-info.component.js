@@ -1,7 +1,17 @@
 import React from "react";
 import { Text, Card } from "react-native-paper";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import styled from "styled-components/native";
+
+const RestaurantCard = styled(Card)`
+  background-color: white;
+`;
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px;
+  background-color: red;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Abhik Restaurant",
@@ -16,10 +26,10 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   } = restaurant;
   return (
     <>
-      <Card elevation={5} style={style.card}>
-        <Card.Cover key={name} source={{ uri: photos[0] }} />
+      <RestaurantCard elevation={5} style={style.card}>
+        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
         <Title>{name}</Title>
-      </Card>
+      </RestaurantCard>
     </>
   );
 };
@@ -28,7 +38,7 @@ const style = StyleSheet.create({
   card: { marginBottom: "50px" },
 });
 
-const Title = styled.Text`
+const Title = styled(Text)`
   color: blue;
   padding: 16px;
   text-align: left;

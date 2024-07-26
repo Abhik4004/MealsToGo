@@ -5,6 +5,7 @@ import {
   View,
   SafeAreaView,
   Platform,
+  ScrollView,
 } from "react-native";
 import { RestaurantInfoCard } from "../components/restaurant-info.component";
 // import Search from "./src/components/SearchBar";
